@@ -1,13 +1,13 @@
 img
 {
-    height: 10rem;
+    height: 5rem;
     background-image: none;
 }
 
 .header
 {
     justify-content: center;
-    height: 20%;
+    height: 12%;
     background-color: black;
 }
 
