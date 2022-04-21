@@ -1,0 +1,25 @@
+img
+{
+    height: 10rem;
+    background-image: none;
+}
+
+.header
+{
+    justify-content: center;
+    height: 20%;
+    background-color: black;
+}
+
+span
+{
+    display: flex;
+    align-items: center;
+}
+
+h1
+{
+    color: white;
+    padding-left: 1.2rem;
+    font-size: 3rem;
+}
