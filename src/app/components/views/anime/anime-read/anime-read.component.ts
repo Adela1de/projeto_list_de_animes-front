@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { anime } from '../anime.model';
+import { AnimeService } from '../anime.service';
 
 @Component({
   selector: 'app-anime-read',
@@ -7,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimeReadComponent implements OnInit {
 
-  constructor() { }
+  animes: anime[] = []
+
+  displayedColumns: string[] = ['id', 'name', 'studio', 'genre', 'author', 'acoes'];
+
+  constructor(private service: AnimeService) { }
 
   ngOnInit(): void {
-    
+    this.findAll();
   }
-  
-  displayedColumns: string[] = ['id', 'name', 'studio', 'genre', 'author'];
-
+  findAll() 
+  {
+    this.service.findAll().subscribe(answer => {
+      console.log(answer);
+      this.animes = answer;
+    })
+  }
 }
