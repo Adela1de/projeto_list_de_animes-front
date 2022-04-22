@@ -19,7 +19,31 @@
 
 }
 
+button
+{
+    margin-bottom: 1rem;
+    color: red;
+}
+
 .table
 {
     width: 100%;
 }
+
+.edit
+{
+    color: chocolate;
+
+}
+
+.delete
+{
+
+    color: rgba(255, 55, 55, 0.748);
+}
+
+.mat-header
+{
+    width: 3rem;
+}
+
