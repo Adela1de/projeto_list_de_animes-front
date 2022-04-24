@@ -17,7 +17,6 @@ export class AnimeService {
   {
     const url = `${this.baseUrl}animes`
     return this.http.get<anime[]>(url);
-
   }
 
   create(anime: anime):Observable<anime>

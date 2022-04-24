@@ -1,23 +1,19 @@
 <form>
-    <h1>ADDING A NEW ANIME</h1>
-
-    <mat-form-field class="form">
-        <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="user.name" type="text" name="Name" placeholder="Ex. Hunter x Hunter"> 
-    </mat-form-field>
+    <h1>LOG IN</h1>
 
     <mat-form-field class="form">
         <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="user.email" type="text" name="Studio" placeholder="Ex. Wit">
+            <input matInput [(ngModel)]="user.email" type="text" name="email" placeholder="Ex. gmail.com">
     </mat-form-field>  
 
     <mat-form-field class="form">
         <mat-label>PassWord</mat-label>
-            <input matInput [(ngModel)]="user.password" type="text" name="Genre" placeholder="Ex. Slice of Life"> 
+            <input matInput [(ngModel)]="user.password" type="text" name="password" placeholder="Ex. 123456"> 
     </mat-form-field>
 
     <div class="buttons">
-        <button class="mat-elevation-z8" mat-stroked-button color="primary">LOG IN</button>
+        <button (click)="login(user.email, user.password)"class="mat-elevation-z8" mat-stroked-button color="primary">LOG IN</button>
+        <button class="mat-elevation-z8" mat-stroked-button color="warn">REGISTER</button>
         <button class="mat-elevation-z8" mat-stroked-button color="warn">CANCEL</button>
     </div>
 </form>
