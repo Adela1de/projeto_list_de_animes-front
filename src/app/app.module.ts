@@ -19,6 +19,9 @@ import { AnimeReadComponent } from './components/views/anime/anime-read/anime-re
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { AnimeCreateComponent } from './components/views/anime/anime-create/anime-create.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { AnimeCreateComponent } from './components/views/anime/anime-create/anim
     MatCardModule,
     MatTableModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
