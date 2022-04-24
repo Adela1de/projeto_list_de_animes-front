@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './components/views/user/user-find/login.component';
+import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './components/views/user/user-find/login.componen
     HomeComponent,
     AnimeReadComponent,
     AnimeCreateComponent,
-    LoginComponent
+    LoginComponent,
+    UserFindFavoritesComponent
   ],
   imports: [
     BrowserModule,
