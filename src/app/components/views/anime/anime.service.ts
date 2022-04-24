@@ -19,4 +19,12 @@ export class AnimeService {
     return this.http.get<anime[]>(url);
 
   }
+
+  create(anime: anime):Observable<anime>
+  {
+    const url = `${this.baseUrl}animes`
+    return this.http.post<anime>(url, anime);
+
+  }
+
 }

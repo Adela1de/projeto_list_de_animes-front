@@ -1,9 +1,9 @@
 export interface anime
 {
-    id?: String;
-    name: String;
-    studio: String[];
-    genre: String[];
-    author: String;
+    id?: string;
+    name: string;
+    studio: string[];
+    genre: string[];
+    author: string;
     
 }   

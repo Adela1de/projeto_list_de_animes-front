@@ -22,6 +22,7 @@ import { AnimeCreateComponent } from './components/views/anime/anime-create/anim
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginComponent } from './components/views/user/user-find/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NavComponent,
     HomeComponent,
     AnimeReadComponent,
-    AnimeCreateComponent
+    AnimeCreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

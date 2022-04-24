@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimeCreateComponent } from './components/views/anime/anime-create/anime-create.component';
 import { AnimeReadComponent } from './components/views/anime/anime-read/anime-read.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { LoginComponent } from './components/views/user/user-find/login.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,14 @@ const routes: Routes = [
     component: AnimeReadComponent
   },
   {
+    path: 'users',
+    component: LoginComponent
+  },
+  {
     path: 'animes/create',
     component: AnimeCreateComponent
   }
+
 ];
 
 @NgModule({

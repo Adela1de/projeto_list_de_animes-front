@@ -42,8 +42,13 @@ button
     color: rgba(255, 55, 55, 0.748);
 }
 
+.favorite
+{
+    color: pink;
+}
+
 .mat-header
 {
-    width: 3rem;
+    width: 5rem;
 }
 
