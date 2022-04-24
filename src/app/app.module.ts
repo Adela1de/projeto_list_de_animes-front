@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AnimeReadComponent } from './components/views/anime/anime-read/anime-read.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { AnimeCreateComponent } from './components/views/anime/anime-create/anime-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    AnimeReadComponent
+    AnimeReadComponent,
+    AnimeCreateComponent
   ],
   imports: [
     BrowserModule,

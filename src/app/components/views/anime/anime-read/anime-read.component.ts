@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { anime } from '../anime.model';
 import { AnimeService } from '../anime.service';
 
@@ -13,7 +14,7 @@ export class AnimeReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'studio', 'genre', 'author', 'acoes'];
 
-  constructor(private service: AnimeService) { }
+  constructor(private service: AnimeService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -24,5 +25,10 @@ export class AnimeReadComponent implements OnInit {
       console.log(answer);
       this.animes = answer;
     })
+  }
+
+  navegarParaAnimeCreate()
+  {
+    this.router.navigate(["animes/create"])
   }
 }
