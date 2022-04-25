@@ -18,15 +18,23 @@ export class UserFindFavoritesComponent implements OnInit {
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.findAll()
+    this.findFavorites()
   }
 
-  findAll():void
+  findFavorites():void
   {
-    this.service.findAll().subscribe(answer => {
-      console.log(answer)
-      this.favorites = answer;
-    })
+    if(this.service.isLogged)
+    {
+      this.service.findFavorites().subscribe(answer => {
+        console.log(answer)
+        this.favorites = answer;
+      })
+    }
+    else
+    {
+      this.router.navigate([""])
+    }
+    
   }
 
 }

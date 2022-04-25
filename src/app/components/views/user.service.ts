@@ -29,18 +29,34 @@ export class UserService {
   {
     const url = `${this.baseUrl}users/user`
     this.isLogged = true;
-    this.user = this.http.post<user>(url, {email, password})
-    return this.user;
-  }
+    this.user = this.http.post<user>(url, {email, password});
 
-  findAll():Observable<anime[]>
-  {
     this.user.subscribe((answer: user) => {
       console.log(answer)
       this.userLogged = answer
     })
+    return this.user;
+  }
+
+  findFavorites():Observable<anime[]>
+  {
     console.log(this.userLogged);
     const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
     return this.http.get<anime[]>(url);
+  }
+
+  logOf():Observable<void>
+  {
+      this.user = '';
+      this.user = 
+      {
+        id:'',
+        name:'',
+        email:'',
+        password:'',
+        favorites:''
+      }
+
+    return new Observable<void>();
   }
 }
