@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { user } from './user.model';
 import { Observable } from 'rxjs';
 import { anime } from './anime/anime.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -23,7 +24,7 @@ export class UserService {
     favorites: []
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   login(email: string, password: string):Observable<user>
   {
@@ -35,7 +36,14 @@ export class UserService {
       console.log(answer)
       this.userLogged = answer
     })
+    
     return this.user;
+  }
+
+  create(name: string, email: string, password: string):Observable<user>
+  {
+    const url = `${this.baseUrl}users`
+    return this.http.post<user>(url, {name, email, password})
   }
 
   findFavorites():Observable<anime[]>
@@ -57,5 +65,14 @@ export class UserService {
         favorites:[]
       }
       this.isLogged = false;
+  }
+
+  mensagem(str: string):void
+  {
+    this._snack.open(`${str}`, "OK", {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      duration: 3000
+    })
   }
 }

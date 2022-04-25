@@ -24,6 +24,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './components/views/user/user-find/login.component';
 import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
+import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { UserFindFavoritesComponent } from './components/views/user/user-find-fa
     AnimeReadComponent,
     AnimeCreateComponent,
     LoginComponent,
-    UserFindFavoritesComponent
+    UserFindFavoritesComponent,
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { UserFindFavoritesComponent } from './components/views/user/user-find-fa
     MatButtonModule,
     FormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

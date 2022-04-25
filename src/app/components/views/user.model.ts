@@ -1,7 +1,7 @@
 export interface user
 {
     id?: string,
-    name: String,
+    name: string,
     email: string,
     password: string;
     favorites: string[]

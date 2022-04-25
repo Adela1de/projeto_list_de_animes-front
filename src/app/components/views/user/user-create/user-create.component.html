@@ -1,0 +1,23 @@
+<form>
+    <h1>REGISTER</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="user.name" type="text" name="name" placeholder="Ex. João Leal">
+    </mat-form-field>  
+
+    <mat-form-field class="form">
+        <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="user.email" type="text" name="email" placeholder="Ex. gmail.com">
+    </mat-form-field>  
+
+    <mat-form-field class="form">
+        <mat-label>PassWord</mat-label>
+            <input matInput [(ngModel)]="user.password" type="text" name="password" placeholder="Ex. 123456"> 
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="create(user.name, user.email, user.password)" class="mat-elevation-z8" mat-stroked-button color="primary">CONFIRM</button>
+        <button routerLink="/users" class="mat-elevation-z8" mat-stroked-button color="warn">BACK</button>
+    </div>
+</form>

@@ -28,12 +28,14 @@ export class LoginComponent implements OnInit {
     if(!this.service.isLogged)
     {
       this.service.login(email, password).subscribe((answer) => {
-        console.log(answer);
+        this.service.mensagem('Agora você está logado!');
         this.user = answer;
+        this.router.navigate([''])
       })
     }
     else
     {
+      this.service.mensagem('Você já está logado!');
       this.router.navigate([""])
     }
   }
