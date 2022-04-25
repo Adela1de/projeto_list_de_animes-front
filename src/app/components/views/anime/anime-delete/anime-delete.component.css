@@ -1,0 +1,52 @@
+form
+{
+    text-align: center;
+    width: 70%;
+    margin: 2rem auto 0 auto;
+}
+
+h1
+{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.form
+{
+    width: 100%;
+}
+
+
+.buttons
+{
+    text-align: center;
+}
+
+button
+{
+    margin-right: .5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.add_studio
+{
+    top:20%;
+    left:85.5%;
+    width:100px;
+    height:40px;
+    position: absolute;
+    z-index: 2;
+    color: white;
+}
+
+.add_genre
+{
+    top:27%;
+    left:85.5%;
+    width:100px;
+    height:40px;
+    position: absolute;
+    z-index: 2;
+    color: white;
+}

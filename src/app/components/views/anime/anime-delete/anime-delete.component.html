@@ -1,0 +1,29 @@
+<form>
+    <h1></h1>
+
+    <mat-form-field class="form">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="anime.name" type="text" name="Name" disabled> 
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Studio</mat-label>
+            <input matInput [(ngModel)]="anime.studio" type="text" name="Studio" disabled>
+    </mat-form-field>  
+
+    <mat-form-field class="form">
+        <mat-label>Genre</mat-label>
+            <input matInput [(ngModel)]="anime.genre" type="text" name="Genre" disabled> 
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Author</mat-label>
+            <input matInput [(ngModel)]="anime.author" type="text" name="Author" disabled> 
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="delete() "class="mat-elevation-z8" mat-stroked-button color="primary">CONFIRM</button>
+        <button (click)="cancel() "class="mat-elevation-z8" mat-stroked-button color="warn">CANCEL</button>
+    </div>
+    
+</form>

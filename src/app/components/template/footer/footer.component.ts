@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { UserService } from '../../views/user.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +12,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

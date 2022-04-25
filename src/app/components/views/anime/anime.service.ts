@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AnimeService {
 
-  baseUrl: String = environment.baseUrl;
+  baseUrl: String = environment.baseUrl
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
@@ -20,11 +20,23 @@ export class AnimeService {
     return this.http.get<anime[]>(url);
   }
 
+  findById(id: string):Observable<anime>
+  {
+    const url = `${this.baseUrl}animes/${id}`
+    return this.http.get<anime>(url);
+  }
+
   create(anime: anime):Observable<anime>
   {
     const url = `${this.baseUrl}animes`
-    return this.http.post<anime>(url, anime);
+    return this.http.post<anime>(url, anime)
 
+  }
+
+  delete(id: string):Observable<void>
+  {
+    const url = `${this.baseUrl}animes/${id}`
+    return this.http.delete<void>(url);
   }
 
   message(str: string):void

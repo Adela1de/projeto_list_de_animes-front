@@ -52,4 +52,8 @@ export class AnimeCreateComponent implements OnInit {
     console.log(this.anime.genre)
   }
 
+  cancel():void
+  {
+    this.router.navigate(['animes'])
+  }
 }

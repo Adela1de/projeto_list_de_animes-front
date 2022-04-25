@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimeCreateComponent } from './components/views/anime/anime-create/anime-create.component';
+import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anime-delete.component';
 import { AnimeReadComponent } from './components/views/anime/anime-read/anime-read.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'users/create',
     component: UserCreateComponent
+  },
+  {
+    path: 'animes/delete/:id',
+    component: AnimeDeleteComponent
   }
 
 ];
