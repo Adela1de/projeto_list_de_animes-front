@@ -8,17 +8,10 @@ import { UserService } from '../../views/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  logged: boolean = false;
-
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.checkIfIsLogged();
+
   }
-  checkIfIsLogged(){
-    if(this.userService.isLogged)
-    {
-      this.logged = true
-    }
-  }
+
 }

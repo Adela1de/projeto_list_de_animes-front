@@ -27,6 +27,7 @@ import { UserFindFavoritesComponent } from './components/views/user/user-find-fa
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anime-delete.component';
+import { AnimeUpdateComponent } from './components/views/anime/anime-update/anime-update.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anim
     UserFindFavoritesComponent,
     UserCreateComponent,
     AnimeDeleteComponent,
+    AnimeUpdateComponent,
   ],
   imports: [
     BrowserModule,
