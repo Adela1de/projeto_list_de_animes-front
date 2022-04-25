@@ -1,4 +1,6 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { anime } from '../anime.model';
 import { AnimeService } from '../anime.service';
 
@@ -23,7 +25,7 @@ export class AnimeCreateComponent implements OnInit {
     author: ''
   }
 
-  constructor(private service: AnimeService) { }
+  constructor(private service: AnimeService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,7 +33,8 @@ export class AnimeCreateComponent implements OnInit {
   create(): void
   {
     this.service.create(this.anime).subscribe((answer) => {
-      console.log(answer);
+      this.service.message('Anime successfully created!')
+      this.router.navigate(['animes'])
     }) 
   }
 

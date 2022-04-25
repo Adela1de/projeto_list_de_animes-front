@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../user.service';
 import { anime } from '../anime.model';
 import { AnimeService } from '../anime.service';
 
@@ -14,10 +15,10 @@ export class AnimeReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'studio', 'genre', 'author', 'acoes'];
 
-  constructor(private service: AnimeService, private router: Router) { }
+  constructor(private service: AnimeService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.findAll();
+    this.checkIfIsLogged()
   }
   findAll() 
   {
@@ -30,5 +31,15 @@ export class AnimeReadComponent implements OnInit {
   navegarParaAnimeCreate()
   {
     this.router.navigate(["animes/create"])
+  }
+
+  checkIfIsLogged():void
+  {
+    if(this.userService.isLogged) { this.findAll() }
+    else 
+    { 
+      this.service.message("You need to be logged to see the animes listed!")
+      this.router.navigate([''])
+    }
   }
 }

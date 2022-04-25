@@ -18,23 +18,35 @@ export class UserFindFavoritesComponent implements OnInit {
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.findFavorites()
+
+    this.checkIfIsLogged()
   }
 
   findFavorites():void
   {
-    if(this.service.isLogged)
-    {
-      this.service.findFavorites().subscribe(answer => {
-        console.log(answer)
+    this.service.findFavorites().subscribe(answer => {
+      
+      if(answer[0] == null) 
+      {
+        this.service.message("You don't have any favorited anime");
+        this.router.navigate([''])
+      }
+      else
+      {
         this.favorites = answer;
-      })
-    }
-    else
-    {
-      this.router.navigate([""])
-    }
-    
+      }
+    })
+
+  }
+
+  checkIfIsLogged():void
+  {
+    if(this.service.isLogged){ this.findFavorites() }
+    else 
+    {      
+      this.service.message("You need to be logged to see favorited animes");
+      this.router.navigate([""]) 
+    } 
   }
 
 }

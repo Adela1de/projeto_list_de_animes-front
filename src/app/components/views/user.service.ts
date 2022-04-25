@@ -67,7 +67,7 @@ export class UserService {
       this.isLogged = false;
   }
 
-  mensagem(str: string):void
+  message(str: string):void
   {
     this._snack.open(`${str}`, "OK", {
       horizontalPosition: 'center',

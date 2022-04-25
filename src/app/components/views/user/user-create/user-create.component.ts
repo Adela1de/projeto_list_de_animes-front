@@ -26,7 +26,7 @@ export class UserCreateComponent implements OnInit {
   create(name: string, email: string, password: string):void
   {
     this.service.create(name, email, password).subscribe((answer) => {
-      this.service.mensagem('Registrado com sucesso!');
+      this.service.message('Registrado com sucesso!');
       this.router.navigate(['']);
     })
   }
