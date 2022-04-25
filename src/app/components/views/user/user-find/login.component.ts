@@ -40,9 +40,7 @@ export class LoginComponent implements OnInit {
 
   logOf():void
   {
-    this.service.logOf().subscribe(answer => {
-      console.log(answer)
-    });
+    this.service.logOf();
   }
 
 }

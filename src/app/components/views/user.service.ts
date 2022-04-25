@@ -45,18 +45,17 @@ export class UserService {
     return this.http.get<anime[]>(url);
   }
 
-  logOf():Observable<void>
+  logOf():void
   {
       this.user = '';
-      this.user = 
+      this.userLogged = 
       {
         id:'',
         name:'',
         email:'',
         password:'',
-        favorites:''
+        favorites:[]
       }
-
-    return new Observable<void>();
+      this.isLogged = false;
   }
 }
