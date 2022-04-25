@@ -15,7 +15,6 @@ export class UserFindFavoritesComponent implements OnInit {
 
   favorites: anime[]= [] 
 
-
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,7 +24,7 @@ export class UserFindFavoritesComponent implements OnInit {
   findAll():void
   {
     this.service.findAll().subscribe(answer => {
-      console.log(answer);
+      console.log(answer)
       this.favorites = answer;
     })
   }

@@ -13,20 +13,33 @@ export class UserService {
 
   baseUrl: String = environment.baseUrl;
   isLogged: boolean = false;
-  userLogged: any;
+  user: any; 
+  userLogged: user = 
+  {
+    id: '',
+    name: '',
+    email: '',
+    password: '',
+    favorites: []
+  };
+
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string):Observable<user>
   {
     const url = `${this.baseUrl}users/user`
     this.isLogged = true;
-    this.userLogged = this.http.post<user>(url, {email, password})
-    return this.userLogged;
+    this.user = this.http.post<user>(url, {email, password})
+    return this.user;
   }
 
   findAll():Observable<anime[]>
   {
-    console.log(this.userLogged.id)
+    this.user.subscribe((answer: user) => {
+      console.log(answer)
+      this.userLogged = answer
+    })
+    console.log(this.userLogged);
     const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
     return this.http.get<anime[]>(url);
   }
