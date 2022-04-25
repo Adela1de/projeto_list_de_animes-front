@@ -4,4 +4,5 @@ export interface user
     name: String,
     email: string,
     password: string;
+    favorites: string[]
 }

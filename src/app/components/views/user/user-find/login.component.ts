@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   {
     name: '',
     email: '',
-    password: ''
+    password: '',
+    favorites: []
   }
 
   constructor(private service: UserService, private router: Router) { }
@@ -24,10 +25,11 @@ export class LoginComponent implements OnInit {
 
   login(email: string, password: string): void
   {
-    if(this.service.isLogged == true)
+    if(!this.service.isLogged)
     {
       this.service.login(email, password).subscribe((answer) => {
         console.log(answer);
+        this.user = answer;
       })
     }
     else

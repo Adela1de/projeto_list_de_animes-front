@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimeCreateComponent } from './components/views/anime/anime-create/anime-create.component';
 import { AnimeReadComponent } from './components/views/anime/anime-read/anime-read.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
 import { LoginComponent } from './components/views/user/user-find/login.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'animes/create',
     component: AnimeCreateComponent
+  },
+  {
+    path: 'users/favorites',
+    component: UserFindFavoritesComponent
   }
 
 ];
