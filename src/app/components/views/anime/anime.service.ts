@@ -39,6 +39,12 @@ export class AnimeService {
     return this.http.delete<void>(url);
   }
 
+  update(anime: anime):Observable<anime>
+  {
+    const url = `${this.baseUrl}animes`
+    return this.http.put<anime>(url, anime);
+  }
+
   message(str: string):void
   {
     this._snack.open(`${str}`, "OK", {

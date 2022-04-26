@@ -22,7 +22,7 @@ export class AnimeUpdateComponent implements OnInit {
   constructor(private service: AnimeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.anime.id = <string>this.route.snapshot.paramMap.get('id')
+    this.anime.id = this.route.snapshot.paramMap.get('id')!
     this.findById()
   }
 
@@ -36,12 +36,14 @@ export class AnimeUpdateComponent implements OnInit {
 
   update():void
   {
-    
+    this.service.update(this.anime).subscribe((answer) => {
+      this.anime = answer;
+      this.router.navigate(['animes'])
+    })
   }
 
-  cancel()
+  cancel():void
   {
     this.router.navigate(['animes'])
   }
-
 }

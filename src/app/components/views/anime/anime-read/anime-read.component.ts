@@ -20,7 +20,7 @@ export class AnimeReadComponent implements OnInit {
   ngOnInit(): void {
     this.checkIfIsLogged()
   }
-  findAll() 
+  findAll():void
   {
     this.service.findAll().subscribe(answer => {
       console.log(answer);
@@ -28,7 +28,7 @@ export class AnimeReadComponent implements OnInit {
     })
   }
 
-  navegarParaAnimeCreate()
+  navegarParaAnimeCreate():void
   {
     this.router.navigate(["animes/create"])
   }

@@ -28,6 +28,7 @@ import { UserCreateComponent } from './components/views/user/user-create/user-cr
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anime-delete.component';
 import { AnimeUpdateComponent } from './components/views/anime/anime-update/anime-update.component';
+import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AnimeUpdateComponent } from './components/views/anime/anime-update/anim
     UserCreateComponent,
     AnimeDeleteComponent,
     AnimeUpdateComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,14 +42,12 @@ export class AnimeCreateComponent implements OnInit {
   {
     this.anime.studio[this.studio_counter] = studios;
     this.studio_counter++;
-    console.log(this.anime.studio)
   }
 
   add_genre(genres: String): void
   {
     this.anime.genre[this.genre_counter] = genres;
     this.genre_counter++;
-    console.log(this.anime.genre)
   }
 
   cancel():void

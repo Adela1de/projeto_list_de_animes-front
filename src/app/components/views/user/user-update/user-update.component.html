@@ -1,9 +1,9 @@
 <form>
-    <h1>UPDATE ANIME</h1>
+    <h1>FAVORITE ANIME</h1>
 
     <mat-form-field class="form">
         <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="anime.name" type="text" name="Name" placeholder="Ex. Hunter x Hunter"> 
+        <input matInput [(ngModel)]="anime.name" type="text" name="Name" disabled> 
     </mat-form-field>
 
     <mat-form-field class="form">
@@ -18,13 +18,12 @@
 
     <mat-form-field class="form">
         <mat-label>Author</mat-label>
-            <input matInput [(ngModel)]="anime.author" type="text" name="Author" placeholder="Ex. Tatsuya Endo"> 
+            <input matInput [(ngModel)]="anime.author" type="text" name="Author" disabled> 
     </mat-form-field>
 
     <div class="buttons">
-        <button (click)="update()"class="mat-elevation-z8" mat-stroked-button color="primary">UPDATE</button>
-        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">CANCEL</button>
+        <button (click)="update()"class="mat-elevation-z8" mat-stroked-button color="primary">CONFIRM</button>
+        <button class="mat-elevation-z8" mat-stroked-button color="warn">CANCEL</button>
     </div>
     
 </form>
-

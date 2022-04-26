@@ -31,7 +31,6 @@ export class UserService {
     const url = `${this.baseUrl}users/user`
     this.isLogged = true;
     this.user = this.http.post<user>(url, {email, password});
-
     this.user.subscribe((answer: user) => {
       console.log(answer)
       this.userLogged = answer
@@ -44,6 +43,12 @@ export class UserService {
   {
     const url = `${this.baseUrl}users`
     return this.http.post<user>(url, {name, email, password})
+  }
+
+  updateFavorites(anime: anime):Observable<user>
+  {
+    const url = `${this.baseUrl}users`
+    return this.http.put<user>(url, this.user);
   }
 
   findFavorites():Observable<anime[]>

@@ -8,6 +8,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
 import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
 import { LoginComponent } from './components/views/user/user-find/login.component';
+import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
 
 const routes: Routes = [
   {
@@ -41,8 +42,11 @@ const routes: Routes = [
   {
     path: 'animes/update/:id',
     component: AnimeUpdateComponent
+  },
+  {
+    path: 'animes/favorites/:id',
+    component: UserUpdateComponent
   }
-
 ];
 
 @NgModule({

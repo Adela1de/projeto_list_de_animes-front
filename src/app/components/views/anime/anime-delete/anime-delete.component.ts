@@ -22,7 +22,7 @@ export class AnimeDeleteComponent implements OnInit {
   constructor(private service: AnimeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.anime.id = <string>this.route.snapshot.paramMap.get('id');
+    this.anime.id = this.route.snapshot.paramMap.get('id')!;
     this.findById();
   }
 
