@@ -21,20 +21,27 @@ export class UserUpdateComponent implements OnInit {
     author: ''
   }
 
+
   constructor(private service: UserService, private route: ActivatedRoute, private router: Router, private animeService: AnimeService) { }
 
   ngOnInit(): void {
     this.anime.id = this.route.snapshot.paramMap.get('id')!;
     this.animeService.findById(<string>this.anime.id).subscribe((answer) => {
       this.anime = answer;
+      
     })
   }
 
-  update():void
+  addFavorite()
   {
-    this.service.updateFavorites(this.anime).subscribe((answer) => {
-      this.router.navigate(['users/favorites'])
-    })
+    this.service.addFavorite(this.anime).subscribe((answer) =>{
+      this.router.navigate(['animes'])
+    });
+  }
+
+  cancel():void
+  {
+    this.router.navigate(['animes'])
   }
 
 }

@@ -6,5 +6,5 @@ export interface user
     name: string,
     email: string,
     password: string,
-    favorites: anime[]
+    favorites?: anime[]
 }

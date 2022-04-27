@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { user } from './user.model';
-import { Observable } from 'rxjs';
+import { find, Observable } from 'rxjs';
 import { anime } from './anime/anime.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -14,29 +14,40 @@ export class UserService {
 
   baseUrl: String = environment.baseUrl;
   isLogged: boolean = false;
-  user: any; 
   userLogged: user = 
   {
     id: '',
     name: '',
     email: '',
     password: '',
-    favorites: []
   };
+
+  favs: any[] = []
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
-  login(email: string, password: string):Observable<user>
+  findById():Observable<user>
   {
+    const url = `${this.baseUrl}users/${this.userLogged.id}` 
+    return this.http.get<user>(url);
+  }
+
+  addFavorite(anime: anime): Observable<user>
+  {
+    const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
+    return this.http.put<user>(url, anime);
+  }
+
+  
+  login(email: string, password: string):user
+    {
     const url = `${this.baseUrl}users/user`
     this.isLogged = true;
-    this.user = this.http.post<user>(url, {email, password});
-    this.user.subscribe((answer: user) => {
-      console.log(answer)
-      this.userLogged = answer
+    this.http.post<user>(url, {email, password}).subscribe((answer) => {
+      this.userLogged = answer;
     })
-    
-    return this.user;
+
+    return this.userLogged;
   }
 
   create(name: string, email: string, password: string):Observable<user>
@@ -45,33 +56,25 @@ export class UserService {
     return this.http.post<user>(url, {name, email, password})
   }
 
-  updateFavorites(anime: anime):Observable<user>
-  {
-    const url = `${this.baseUrl}users`
-    return this.http.put<user>(url, this.user);
-  }
-
   findFavorites():Observable<anime[]>
   {
-    console.log(this.userLogged);
     const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
     return this.http.get<anime[]>(url);
   }
 
   logOf():void
   {
-      this.user = '';
       this.userLogged = 
       {
         id:'',
         name:'',
         email:'',
         password:'',
-        favorites:[]
+        favorites:[] = []
       }
       this.isLogged = false;
   }
-
+  
   message(str: string):void
   {
     this._snack.open(`${str}`, "OK", {

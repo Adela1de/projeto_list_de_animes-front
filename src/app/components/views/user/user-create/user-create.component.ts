@@ -14,8 +14,7 @@ export class UserCreateComponent implements OnInit {
   {
     name: '',
     email: '',
-    password: '',
-    favorites: []
+    password: ''
   }
 
   constructor(private service: UserService, private router: Router) { }

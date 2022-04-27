@@ -14,8 +14,7 @@ export class LoginComponent implements OnInit {
   {
     name: '',
     email: '',
-    password: '',
-    favorites: []
+    password: ''
   }
 
   constructor(private service: UserService, private router: Router) { }
@@ -27,19 +26,18 @@ export class LoginComponent implements OnInit {
   {
     if(!this.service.isLogged)
     {
-      this.service.login(email, password).subscribe((answer) => {
-        if(answer == null){ this.service.message('Invalid user or password'); }
-        else
-        {
-          this.service.message('You are now logged in');
-          this.user = answer;
-          this.router.navigate([''])
-        }
-      })
+      this.user = this.service.login(email, password)
+      console.log(this.user)
+      if(this.user == null){ this.service.message('Invalid user or password'); }
+      else
+      {
+        this.service.message('You are now logged in');
+        this.router.navigate([''])
+      }
     }
     else
     {
-      this.service.message('You are already logged in!');
+      this.service.message('You are already logged in! as: ' + this.user.name);
       this.router.navigate([""])
     }
   }
