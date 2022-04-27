@@ -2,9 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { user } from './user.model';
-import { find, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { anime } from './anime/anime.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { score } from './score.model';
 
 
 @Injectable({
@@ -22,8 +23,6 @@ export class UserService {
     password: '',
   };
 
-  favs: any[] = []
-
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   findById():Observable<user>
@@ -34,7 +33,7 @@ export class UserService {
 
   addFavorite(anime: anime): Observable<user>
   {
-    const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
+    const url = `${this.baseUrl}users/favorites/add/${this.userLogged.id}`
     return this.http.put<user>(url, anime);
   }
 
@@ -60,6 +59,12 @@ export class UserService {
   {
     const url = `${this.baseUrl}users/favorites/${this.userLogged.id}`
     return this.http.get<anime[]>(url);
+  }
+
+  findScores():Observable<score[]>
+  {
+    const url = `${this.baseUrl}scores/${this.userLogged.id}`
+    return this.http.get<score[]>(url);
   }
 
   logOf():void

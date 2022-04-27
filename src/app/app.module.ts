@@ -29,6 +29,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anime-delete.component';
 import { AnimeUpdateComponent } from './components/views/anime/anime-update/anime-update.component';
 import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
+import { UserFindScoreComponent } from './components/views/user/user-find-score/user-find-score.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { UserUpdateComponent } from './components/views/user/user-update/user-up
     AnimeDeleteComponent,
     AnimeUpdateComponent,
     UserUpdateComponent,
+    UserFindScoreComponent,
   ],
   imports: [
     BrowserModule,

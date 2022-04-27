@@ -7,6 +7,7 @@ import { AnimeUpdateComponent } from './components/views/anime/anime-update/anim
 import { HomeComponent } from './components/views/home/home.component';
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
 import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
+import { UserFindScoreComponent } from './components/views/user/user-find-score/user-find-score.component';
 import { LoginComponent } from './components/views/user/user-find/login.component';
 import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
 
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'animes/favorites/:id',
     component: UserUpdateComponent
+  },
+  {
+    path: 'scores',
+    component: UserFindScoreComponent
   }
 ];
 

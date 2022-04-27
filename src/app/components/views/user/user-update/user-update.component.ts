@@ -32,7 +32,7 @@ export class UserUpdateComponent implements OnInit {
     })
   }
 
-  addFavorite()
+  addFavorite(): void
   {
     this.service.addFavorite(this.anime).subscribe((answer) =>{
       this.router.navigate(['animes'])

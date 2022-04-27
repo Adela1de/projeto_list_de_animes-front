@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
     }
     else
     {
-      this.service.message('You are already logged in! as: ' + this.user.name);
-      this.router.navigate([""])
+      this.service.message('You are already logged in!');
+      this.router.navigate([''])
     }
   }
 
