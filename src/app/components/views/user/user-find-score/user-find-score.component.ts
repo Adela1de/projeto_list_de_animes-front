@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { anime } from '../../anime/anime.model';
 import { score } from '../../score.model';
-import { user } from '../../user.model';
 import { UserService } from '../../user.service';
 
 @Component({
@@ -12,13 +10,11 @@ import { UserService } from '../../user.service';
 })
 export class UserFindScoreComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'studio', 'genre', 'author', 'entrys'];
+  displayedColumns: string [] = ['name', 'entry']
 
   scores: score[] = []
 
   constructor(private service: UserService, private router: Router) { }
-  
-
 
   ngOnInit(): void {
     this.isLogged();
@@ -28,10 +24,10 @@ export class UserFindScoreComponent implements OnInit {
   {
     if(this.service.isLogged) 
     {
-        this.service.findScores().subscribe((answer) => {
-          console.log(answer)
-          
+        this.service.findScores().subscribe((answer) => { 
+          this.scores = answer;
         })
+        
     }
     else 
     {
