@@ -5,6 +5,7 @@ import { AnimeDeleteComponent } from './components/views/anime/anime-delete/anim
 import { AnimeReadComponent } from './components/views/anime/anime-read/anime-read.component';
 import { AnimeUpdateComponent } from './components/views/anime/anime-update/anime-update.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { UserAddScoreComponent } from './components/views/user/user-add-score/user-add-score.component';
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
 import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
 import { UserFindScoreComponent } from './components/views/user/user-find-score/user-find-score.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'scores',
     component: UserFindScoreComponent
+  },
+  {
+    path: 'scores/create',
+    component: UserAddScoreComponent
   }
 ];
 

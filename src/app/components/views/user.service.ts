@@ -63,7 +63,7 @@ export class UserService {
 
   findScores():Observable<score[]>
   {
-    const url = `${this.baseUrl}scores/${this.userLogged.id}`
+    const url = `${this.baseUrl}scores/user/${this.userLogged.id}`
     return this.http.get<score[]>(url);
   }
 

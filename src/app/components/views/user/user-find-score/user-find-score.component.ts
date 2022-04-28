@@ -10,7 +10,7 @@ import { UserService } from '../../user.service';
 })
 export class UserFindScoreComponent implements OnInit {
 
-  displayedColumns: string [] = ['name', 'entry']
+  displayedColumns: string [] = ['name', 'score']
 
   scores: score[] = []
 
@@ -26,6 +26,7 @@ export class UserFindScoreComponent implements OnInit {
     {
         this.service.findScores().subscribe((answer) => { 
           this.scores = answer;
+          console.log(answer)
         })
         
     }
@@ -34,5 +35,10 @@ export class UserFindScoreComponent implements OnInit {
       this.service.message('You need to be logged to see scores!')
       this.router.navigate(['']);
     }
+  }
+
+  createScoreNavegation():void
+  {
+    this.router.navigate(['scores/create'])
   }
 }
