@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { anime } from '../../anime/anime.model';
+import { AnimeService } from '../../anime/anime.service';
 import { UserService } from '../../user.service';
 
 @Component({
@@ -18,14 +19,30 @@ export class UserAddScoreComponent implements OnInit {
     author: ''
   }
 
-  constructor(private service: UserService, private router: Router) { }
+  entry: string = ''
+
+  constructor(private service: UserService, private animeService: AnimeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.anime.id = this.route.snapshot.paramMap.get('id')!;
+    this.findById()
   }
 
+  findById():void
+  {
+    this.animeService.findById(<string>this.anime.id).subscribe((answer) => {
+      this.anime = answer
+    })
+  }
 
+  createScore():void
+  {
+    this.service.createScore(this.anime, this.entry).subscribe((answer) => {
+      this.router.navigate(['scores'])
+    })
+  }
   cancel():void
   {
-    this.router.navigate(['scores']);
+    this.router.navigate(['animes'])
   }
 }

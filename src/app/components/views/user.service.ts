@@ -37,7 +37,12 @@ export class UserService {
     return this.http.put<user>(url, anime);
   }
 
-  
+  removeFavorite(anime: anime): Observable<user>
+  {
+    const url = `${this.baseUrl}users/favorites/remove/${this.userLogged.id}`;
+    return this.http.put<user>(url, anime);
+  }
+
   login(email: string, password: string):user
     {
     const url = `${this.baseUrl}users/user`
@@ -67,6 +72,15 @@ export class UserService {
     return this.http.get<score[]>(url);
   }
 
+  createScore(anime: anime, entry: string):Observable<score>
+  {
+    let animeId: string = <string>anime.id;
+    let userId: string = <string>this.userLogged.id;
+
+    const url = `${this.baseUrl}scores`
+    return this.http.post<score>(url, {animeId, userId, entry})
+  }
+
   logOf():void
   {
       this.userLogged = 
@@ -78,6 +92,11 @@ export class UserService {
         favorites:[] = []
       }
       this.isLogged = false;
+  }
+
+  getUser():user
+  {
+    return this.userLogged;
   }
   
   message(str: string):void

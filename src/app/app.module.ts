@@ -31,6 +31,7 @@ import { AnimeUpdateComponent } from './components/views/anime/anime-update/anim
 import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
 import { UserFindScoreComponent } from './components/views/user/user-find-score/user-find-score.component';
 import { UserAddScoreComponent } from './components/views/user/user-add-score/user-add-score.component';
+import { UserRemoveFavoriteComponent } from './components/views/user/user-remove-favorite/user-remove-favorite.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UserAddScoreComponent } from './components/views/user/user-add-score/us
     UserUpdateComponent,
     UserFindScoreComponent,
     UserAddScoreComponent,
+    UserRemoveFavoriteComponent,
   ],
   imports: [
     BrowserModule,

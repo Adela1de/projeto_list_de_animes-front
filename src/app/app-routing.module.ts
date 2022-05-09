@@ -10,6 +10,7 @@ import { UserCreateComponent } from './components/views/user/user-create/user-cr
 import { UserFindFavoritesComponent } from './components/views/user/user-find-favorites/user-find-favorites.component';
 import { UserFindScoreComponent } from './components/views/user/user-find-score/user-find-score.component';
 import { LoginComponent } from './components/views/user/user-find/login.component';
+import { UserRemoveFavoriteComponent } from './components/views/user/user-remove-favorite/user-remove-favorite.component';
 import { UserUpdateComponent } from './components/views/user/user-update/user-update.component';
 
 const routes: Routes = [
@@ -54,8 +55,12 @@ const routes: Routes = [
     component: UserFindScoreComponent
   },
   {
-    path: 'scores/create',
+    path: 'animes/scores/create/:id',
     component: UserAddScoreComponent
+  },
+  { 
+    path: 'users/favorites/remove/:id',
+    component: UserRemoveFavoriteComponent
   }
 ];
 

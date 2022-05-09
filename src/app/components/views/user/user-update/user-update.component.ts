@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { anime } from '../../anime/anime.model';
 import { AnimeService } from '../../anime/anime.service';
-import { user } from '../../user.model';
 import { UserService } from '../../user.service';
 
 @Component({
@@ -20,7 +19,6 @@ export class UserUpdateComponent implements OnInit {
     genre: [],
     author: ''
   }
-
 
   constructor(private service: UserService, private route: ActivatedRoute, private router: Router, private animeService: AnimeService) { }
 

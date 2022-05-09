@@ -37,6 +37,7 @@ export class AnimeDeleteComponent implements OnInit {
   delete():void
   {
     this.service.delete(<string>this.anime.id).subscribe((answer) => {
+      this.service.message("Anime deleted successfuly!")
       this.router.navigate(['animes'])
     })
   }
